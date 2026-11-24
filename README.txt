@@ -1,20 +1,14 @@
-STUDYSONIC V3.0 — FLAT MOBILE PACKAGE
+AUDIO DICTATION V4.0 — GITHUB PAGES
 
-This package contains only the new V3 files and the updated version hub. It does NOT include V1 or V2 files because those should remain untouched in your repository.
+Upload these files directly into the repository root (no folders):
+index.html, style.css, v4.html, v4.css, v4.js, README.txt
 
-UPLOAD THESE FILES TO THE ROOT OF YOUR EXISTING GITHUB REPOSITORY:
-- index.html (replace the current version hub)
-- style.css (replace the hub stylesheet)
-- v3.html
-- v3.css
-- v3.js
+Keep all existing V1, V2 and V3 files. Replace the old index.html with this updated version hub. Do not replace the older version files.
 
-KEEP ALL EXISTING V1 AND V2 FILES:
-- v1.html, v1.css, v1.js
-- v2.html, v2.css, v2.js
+V4.0 features:
+- Optional duplicate-word removal while creating a set.
+- Optional automatic practice: after submitting an answer, waits 3 seconds, moves to the next word and speaks it. Turn the toggle off to stop automatic progression.
+- Paste/type one word or phrase per line and choose browser text-to-speech or recording each word in your own voice.
+- English, Dutch, French and Spanish translations for all new controls and feedback.
 
-V3.0 uses the existing V2 IndexedDB database so V2 study sets remain available. V3.0 uses its own language and theme preferences.
-
-The language selector now covers the full interface: study page, library, set creation, recording controls, practice flow, settings, confirmations, errors, and V3.0 release notes. Decorative branding such as StudySonic remains unchanged.
-
-For microphone access, use your GitHub Pages HTTPS website.
+Existing recordings and sets are stored locally in the browser using IndexedDB. Text-to-speech uses the voices available in the browser/device. Microphone recording requires HTTPS and permission.
