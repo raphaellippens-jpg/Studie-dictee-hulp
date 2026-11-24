@@ -17,3 +17,12 @@ GITHUB PAGES: Repository Settings > Pages > Deploy from a branch > main > /(root
 ADDING V2 LATER: Add v2.html, v2.css and v2.js at the same root level, then update index.html with a V2 launch link. Keep all V1 files. No folders or new repository needed.
 
 Recordings use IndexedDB in this browser on this device. Theme settings are saved in localStorage. Clearing website data can delete them. Microphone access requires HTTPS; GitHub Pages provides it.
+
+
+V2 files (new features; V1 remains separate):
+- v2.html, v2.css and v2.js are the V2 app.
+- V2 supports English, Dutch, French and Spanish interface language settings.
+- V2 study sets can be shared/exported as JSON files and imported by another V2 user. Audio is included in the exported file.
+- V1 uses its own database and theme settings; V2 does not change V1 data or files.
+
+To add a future version, add its files at this same top level and add a launch card to index.html.
