@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10131c">
-<title>StudySonic V7.0 — Audio Dictation</title><link rel="stylesheet" href="v7.css">
+<title>StudySonic V7.1 — Audio Dictation</title><link rel="stylesheet" href="v7.css">
 </head>
 <body>
 <div class="app">
 <aside class="sidebar">
-  <a class="brand" href="index.html"><span class="brand-mark">S</span><span>Study<span class="accent">Sonic</span><small>VERSION 7.0</small></span></a>
+  <a class="brand" href="index.html"><span class="brand-mark">S</span><span>Study<span class="accent">Sonic</span><small>VERSION 7.1</small></span></a>
   <div class="side-label">WORKSPACE</div>
   <button type="button" class="nav active" data-page="study">◉ <span>Study</span></button>
   <button type="button" class="nav" data-page="library">▤ <span>My recordings</span><b id="recordingCount">0</b></button>
@@ -17,7 +17,7 @@
   <a class="back-hub" href="index.html">← All versions</a>
 </aside>
 <main class="main">
-<header class="topbar"><div><div class="eyebrow">YOUR PERSONAL AUDIO TRAINER</div><h1 id="pageTitle">Study session</h1></div><span class="version-pill">V7.0</span></header>
+<header class="topbar"><div><div class="eyebrow">YOUR PERSONAL AUDIO TRAINER</div><h1 id="pageTitle">Study session</h1></div><span class="version-pill">V7.1</span></header>
 <section class="page active" id="study">
   <div class="hero"><div class="hero-copy"><div class="eyebrow">LISTEN · THINK · TYPE</div><h2>Train your <span class="main-text">memory.</span></h2><p>Record your own words, play them back, and test what you remember. Your voice becomes your study material.</p><div class="hero-actions"><button type="button" class="primary" id="createBtn">＋ Create a recording set</button><button type="button" class="secondary mindmap-hero-btn" id="createMindmapHero">✳ Create a mindmap</button></div></div><div class="hero-art"><div class="music">♫</div><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>YOUR VOICE · YOUR PACE</small></div></div>
   <div class="section-title"><div class="eyebrow">GET STARTED</div><h2>Your study desk</h2></div>
@@ -86,7 +86,7 @@
 <section class="page mindmap-editor-page" id="mindmapEditor">
   <div class="mindmap-editor-top">
     <div class="mindmap-editor-title"><button type="button" class="secondary" id="backMindmaps">← Mindmaps</button><input id="mindmapTitleInput" class="mindmap-title-input" maxlength="90" value="Untitled mindmap" aria-label="Mindmap title"><span class="save-indicator" id="mindmapSaveStatus">Saved locally</span></div>
-    <div class="mindmap-tools"><button type="button" class="secondary" id="addMainBranch">＋ Main branch</button><button type="button" class="secondary" id="editNodeBtn" disabled>Edit node</button><button type="button" class="secondary" id="fitMindmap">Fit</button><button type="button" class="secondary" id="zoomOut">−</button><button type="button" class="secondary" id="zoomIn">＋</button><button type="button" class="primary" id="exportMindmap">⇩ PNG</button></div>
+    <div class="mindmap-tools"><button type="button" class="secondary" id="addMainBranch">＋ Main branch</button><button type="button" class="secondary" id="editNodeBtn" disabled>Edit node</button><button type="button" class="secondary" id="fitMindmap">Fit</button><button type="button" class="secondary" id="zoomOut">−</button><button type="button" class="secondary" id="zoomIn">＋</button><button type="button" class="secondary" id="exportMindmapPDF">⇩ PDF</button><button type="button" class="primary" id="exportMindmap">⇩ PNG</button></div>
   </div>
   <div class="mindmap-workspace">
     <div class="mindmap-canvas-wrap" id="mindmapCanvasWrap"><svg id="mindmapSvg" viewBox="0 0 2000 1300" role="img" aria-label="Mindmap canvas"><g id="mindmapViewport"></g></svg><div class="canvas-hint">Drag the canvas to pan · Use + / − to zoom · Select a node to edit</div></div>
@@ -98,7 +98,7 @@
 
 <section class="v3-changelog" id="v6Changelog">
   <div class="eyebrow" id="changesEyebrow">VERSION NOTES</div>
-  <h2 id="changesTitle">What changed in V7.0</h2>
+  <h2 id="changesTitle">What changed in V7.1</h2>
   <ul>
     <li id="change1">Choose Robot voice or My own voice before creating a set.</li>
     <li id="change2">Each voice choice opens a dedicated creation workspace.</li>
