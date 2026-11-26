@@ -41,7 +41,7 @@
     <div class="color-setting"><div><h3>Secondary colour</h3><p>Buttons, accents and highlights.</p></div><input type="color" id="secondaryColor"></div><div class="swatches" data-key="secondary"></div><label>Custom HEX</label><input class="hex" id="secondaryHex" maxlength="7">
     <hr>
     <div class="color-setting"><div><h3>Background colour</h3><p>The background behind the interface.</p></div><input type="color" id="backgroundColor"></div><div class="swatches" data-key="background"></div><label>Custom HEX</label><input class="hex" id="backgroundHex" maxlength="7">
-    <hr><div class="color-setting"><div><h3>Neon glow</h3><p>Glow around selected elements.</p></div><label class="switch"><input type="checkbox" id="glow"><span></span></label></div><button type="button" class="secondary" id="resetTheme">↺ Reset appearance</button>
+    <hr><div class="color-setting"><div><h3>Neon glow</h3><p>Glow around selected elements.</p></div><label class="switch"><input type="checkbox" id="glow"><span></span></label></div><div class="settings-extra-actions"><button type="button" class="secondary" id="resetTheme">↺ Reset appearance</button><button type="button" class="secondary" id="replayTutorial">▶ Replay tutorial</button></div>
   </div><div class="panel preview"><div class="eyebrow">LIVE PREVIEW</div><div class="preview-card"><small>YOUR WORKSPACE</small><h3>Make it <b>yours.</b></h3><p>Your chosen colours update the whole app.</p><button type="button" class="primary">Preview button</button><div class="preview-line"></div></div><p class="muted tiny">Theme saves automatically on this device.</p></div></div>
 </section>
 <section class="page" id="builder">
@@ -109,7 +109,22 @@
     <li id="change7" hidden>All new controls, popups and feedback are translated into English, Dutch, French and Spanish.</li>
   </ul>
 </section>
-</main></div><div class="device-backdrop" id="deviceChoiceModal" role="dialog" aria-modal="true" aria-labelledby="deviceChoiceTitle">
+</main></div>
+<div class="tutorial-backdrop" id="firstRunTutorial" hidden role="dialog" aria-modal="true" aria-labelledby="tutorialTitle">
+ <section class="tutorial-card">
+  <div class="tutorial-topline"><span class="tutorial-kicker" id="tutorialKicker">WELCOME TO STUDYSONIC</span><span class="tutorial-step-count" id="tutorialStepCount">1 / 5</span></div>
+  <div class="tutorial-progress" aria-hidden="true"><span id="tutorialProgressBar"></span></div>
+  <div class="tutorial-icon" id="tutorialIcon">♫</div>
+  <h2 id="tutorialTitle">Let's get you started.</h2>
+  <p id="tutorialDescription">A quick tour of the main StudySonic features.</p>
+  <div class="tutorial-tip" id="tutorialTip">You can replay this tutorial any time from Settings.</div>
+  <div class="tutorial-actions">
+   <button type="button" class="secondary" id="tutorialSkip">Skip tutorial</button>
+   <div class="tutorial-nav"><button type="button" class="secondary" id="tutorialBack" hidden>Back</button><button type="button" class="primary" id="tutorialNext">Next →</button></div>
+  </div>
+ </section>
+</div>
+<div class="device-backdrop" id="deviceChoiceModal" role="dialog" aria-modal="true" aria-labelledby="deviceChoiceTitle">
   <section class="device-modal">
     <div class="eyebrow" id="deviceChoiceEyebrow">QUICK SETUP</div>
     <h2 id="deviceChoiceTitle">Which device are you using?</h2>

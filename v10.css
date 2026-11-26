@@ -123,3 +123,18 @@ body[data-device="laptop"] .practice-card{max-width:680px}
 @keyframes mmBranchDraw{to{stroke-dashoffset:0}}
 @keyframes mmNodeSettle{0%{opacity:0;transform:translate(var(--mm-from-x,0px),var(--mm-from-y,0px)) scale(.72)}75%{opacity:1;transform:scale(1.045)}100%{opacity:1;transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.mindmap-editor-page.active,.mindmap-editor-page.active .mindmap-canvas-wrap,.mindmap-connector.mm-reveal,.mindmap-node.mm-reveal{animation:none!important;opacity:1!important;transform:none!important;stroke-dashoffset:0!important}}
+
+
+/* First-launch onboarding tutorial */
+.settings-extra-actions{display:flex;gap:9px;flex-wrap:wrap}
+.tutorial-backdrop{position:fixed;inset:0;z-index:220;background:rgba(5,8,17,.82);backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);display:grid;place-items:center;padding:18px}
+.tutorial-backdrop[hidden]{display:none}
+.tutorial-card{width:min(540px,100%);padding:clamp(22px,5vw,36px);border-radius:23px;background:var(--panel);border:1px solid var(--line);box-shadow:0 28px 100px #000a;color:var(--text);animation:tutorialIn .32s cubic-bezier(.2,.8,.2,1) both}
+@keyframes tutorialIn{from{opacity:0;transform:translateY(14px) scale(.975)}to{opacity:1;transform:none}}
+.tutorial-topline{display:flex;align-items:center;justify-content:space-between;gap:12px}.tutorial-kicker{font-size:9px;letter-spacing:1.8px;font-weight:900;color:var(--secondary)}.tutorial-step-count{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tutorial-progress{height:5px;border-radius:20px;background:var(--line);overflow:hidden;margin:14px 0 26px}.tutorial-progress span{display:block;width:20%;height:100%;border-radius:20px;background:var(--secondary);transition:width .25s ease}
+.tutorial-icon{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;background:color-mix(in srgb,var(--main) 16%,transparent);font-size:29px;margin-bottom:18px}
+.tutorial-card h2{font:800 clamp(23px,5vw,31px) 'Space Grotesk',sans-serif;letter-spacing:-.7px;margin:0 0 10px}.tutorial-card>p{font-size:14px;line-height:1.75;color:var(--muted);margin:0}
+.tutorial-tip{margin-top:19px;padding:13px 14px;border-radius:12px;background:color-mix(in srgb,var(--main) 9%,var(--panel));border:1px solid color-mix(in srgb,var(--main) 24%,var(--line));font-size:11px;line-height:1.6;color:var(--text)}
+.tutorial-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:28px}.tutorial-nav{display:flex;gap:8px}.tutorial-actions button{min-height:42px}.tutorial-actions .primary{min-width:128px}
+@media(max-width:480px){.tutorial-actions{align-items:stretch;flex-direction:column-reverse}.tutorial-nav{display:flex}.tutorial-nav button{flex:1}.tutorial-actions>#tutorialSkip{width:100%}.tutorial-card{border-radius:19px}}

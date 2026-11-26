@@ -1,0 +1,104 @@
+{
+  "release": "V11",
+  "public_version": "V1.1",
+  "archive_format": "flat-root",
+  "legacy_versions_preserved": [
+    "V0.1",
+    "V0.2",
+    "V0.3",
+    "V0.4",
+    "V0.5",
+    "V0.6",
+    "V0.7",
+    "V0.8",
+    "V0.9"
+  ],
+  "major_versions": {
+    "V1": {
+      "launch": "v10.html",
+      "history": [
+        "V1",
+        "V0.9",
+        "V0.8",
+        "V0.7",
+        "V0.6",
+        "V0.5",
+        "V0.4",
+        "V0.3",
+        "V0.2",
+        "V0.1"
+      ]
+    },
+    "V2": {
+      "launch": "future",
+      "available": [
+        "V1.1"
+      ],
+      "vacant": [
+        "V2",
+        "V1.9",
+        "V1.8",
+        "V1.7",
+        "V1.6",
+        "V1.5",
+        "V1.4",
+        "V1.3",
+        "V1.2"
+      ]
+    }
+  },
+  "new_app": [
+    "v11.html",
+    "v11.css",
+    "v11.js"
+  ],
+  "features": [
+    "first-launch tutorial",
+    "analytics dashboard",
+    "smart repetition",
+    "major-version chooser",
+    "four-language UI updates"
+  ],
+  "files": [
+    "README.txt",
+    "V11_MANIFEST.json",
+    "hub.js",
+    "index.html",
+    "style.css",
+    "v1.css",
+    "v1.html",
+    "v1.js",
+    "v10.css",
+    "v10.html",
+    "v10.js",
+    "v11.css",
+    "v11.html",
+    "v11.js",
+    "v2.css",
+    "v2.html",
+    "v2.js",
+    "v3.css",
+    "v3.html",
+    "v3.js",
+    "v4.css",
+    "v4.html",
+    "v4.js",
+    "v5.css",
+    "v5.html",
+    "v5.js",
+    "v6.css",
+    "v6.html",
+    "v6.js",
+    "v7.css",
+    "v7.html",
+    "v7.js",
+    "v8.css",
+    "v8.html",
+    "v8.js",
+    "v9.css",
+    "v9.html",
+    "v9.js",
+    "versions-v1.html",
+    "versions-v2.html"
+  ]
+}

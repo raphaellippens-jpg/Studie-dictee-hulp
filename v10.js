@@ -73,6 +73,7 @@ function applyLanguage(){
  const changeTitle=$("changesTitle");if(changeTitle)changeTitle.textContent=({en:"What changed in V1",nl:"Wat is er veranderd in V1",fr:"Nouveautés de V1",es:"Novedades de V1"})[language]||"What changed in V1";
  changes.forEach((txt,i)=>{const el=$("change"+(i+1));if(el)el.textContent=txt});
  document.documentElement.lang=language;
+ if($("firstRunTutorial")&&!$("firstRunTutorial").hidden)renderTutorial();
  document.querySelectorAll('.set-actions .share').forEach(el=>el.textContent=t.share);
  document.querySelectorAll('.set-actions .primary').forEach(el=>el.textContent=t.practice);
  document.querySelectorAll('.set-actions .delete').forEach(el=>el.textContent=t.del);
@@ -235,6 +236,44 @@ function bindMindmapUI(){loadMindmaps();persistMindmaps();$("createMindmapHero")
  const endPinch=()=>{pinchStartDistance=0;pinchStartScale=mmScale;};wrap.addEventListener("touchend",e=>{if(e.touches.length<2)endPinch()},{passive:true});wrap.addEventListener("touchcancel",endPinch,{passive:true});
 }
 if($("mindmapGrid")){bindMindmapUI();}
+bindTutorial();
+
+
+const TUTORIAL_TEXT={
+ en:{kicker:"WELCOME TO STUDYSONIC",steps:[
+  ["♫","Welcome aboard.","StudySonic helps you learn with your own recordings, listening practice and mindmaps.","This short tour takes about a minute. You can skip it or replay it later in Settings."],
+  ["🎙️","Create a study set","Make a set by recording your own voice, or type a word list and let a text-to-speech voice read it.","Open Study and choose “Create a recording set” to get started."],
+  ["🎧","Practise your words","Listen to each prompt, type what you heard, and check your answer. Your sets stay saved on this device.","Open My recordings to practise, share or import a study set."],
+  ["🧠","Build a mindmap","Create a central topic, add branches and child nodes, then organise your ideas on the canvas.","Mindmaps are saved locally. You can export them as PNG or PDF."],
+  ["⚙️","Make StudySonic yours","Choose your interface language, adjust the colours and revisit this tour whenever you need it.","You're ready. Have a great study session!"]
+ ],skip:"Skip tutorial",back:"Back",next:"Next →",finish:"Start studying",tip:"You can replay this tutorial any time from Settings."},
+ nl:{kicker:"WELKOM BIJ STUDYSONIC",steps:[
+  ["♫","Welkom bij StudySonic!","StudySonic helpt je leren met je eigen opnames, luisteroefeningen en mindmaps.","Deze korte rondleiding duurt ongeveer een minuut. Je kunt ze overslaan of later opnieuw starten via Instellingen."],
+  ["🎙️","Maak een oefenset","Maak een set met je eigen stemopnames, of typ een woordenlijst en laat een spraakstem de woorden voorlezen.","Ga naar Studeren en kies ‘Opnameset maken’ om te beginnen."],
+  ["🎧","Oefen je woorden","Luister naar elke opdracht, typ wat je hoort en controleer je antwoord. Je sets blijven op dit toestel bewaard.","Open Mijn opnames om te oefenen, een set te delen of te importeren."],
+  ["🧠","Maak een mindmap","Maak een centraal onderwerp, voeg vertakkingen en subonderwerpen toe en orden je ideeën op het canvas.","Mindmaps worden lokaal bewaard. Je kunt ze exporteren als PNG of PDF."],
+  ["⚙️","Pas StudySonic aan","Kies je interfacetaal, pas de kleuren aan en start deze rondleiding opnieuw wanneer je wilt.","Je bent klaar. Veel succes met studeren!"]
+ ],skip:"Rondleiding overslaan",back:"Vorige",next:"Volgende →",finish:"Begin met studeren",tip:"Je kunt deze rondleiding altijd opnieuw starten via Instellingen."},
+ fr:{kicker:"BIENVENUE SUR STUDYSONIC",steps:[
+  ["♫","Bienvenue !","StudySonic t’aide à apprendre grâce à tes propres enregistrements, aux exercices d’écoute et aux cartes mentales.","Cette visite dure environ une minute. Tu peux l’ignorer ou la relancer plus tard dans les paramètres."],
+  ["🎙️","Créer une série d’étude","Crée une série avec ta propre voix ou saisis une liste de mots qu’une voix de synthèse lira.","Ouvre Étudier et choisis « Créer une série d’enregistrements »."],
+  ["🎧","Réviser tes mots","Écoute chaque question, écris ce que tu entends et vérifie ta réponse. Tes séries restent enregistrées sur cet appareil.","Ouvre Mes enregistrements pour réviser, partager ou importer une série."],
+  ["🧠","Créer une carte mentale","Ajoute un sujet central, des branches et des sous-branches pour organiser tes idées.","Les cartes mentales sont enregistrées localement et peuvent être exportées en PNG ou PDF."],
+  ["⚙️","Personnaliser StudySonic","Choisis la langue de l’interface, ajuste les couleurs et relance cette visite quand tu le souhaites.","Tout est prêt. Bonnes révisions !"]
+ ],skip:"Ignorer la visite",back:"Retour",next:"Suivant →",finish:"Commencer",tip:"Tu peux relancer cette visite à tout moment dans les paramètres."},
+ es:{kicker:"TE DAMOS LA BIENVENIDA A STUDYSONIC",steps:[
+  ["♫","¡Te damos la bienvenida!","StudySonic te ayuda a aprender con tus propias grabaciones, ejercicios de escucha y mapas mentales.","Este recorrido dura aproximadamente un minuto. Puedes omitirlo o repetirlo más tarde desde Ajustes."],
+  ["🎙️","Crea un conjunto de estudio","Crea un conjunto grabando tu propia voz o escribe una lista de palabras para que una voz sintética las lea.","Abre Estudiar y selecciona «Crear conjunto de grabaciones»."],
+  ["🎧","Practica tus palabras","Escucha cada pregunta, escribe lo que has oído y comprueba tu respuesta. Tus conjuntos se guardan en este dispositivo.","Abre Mis grabaciones para practicar, compartir o importar un conjunto."],
+  ["🧠","Crea un mapa mental","Añade un tema central, ramas y subramas para organizar tus ideas en el lienzo.","Los mapas mentales se guardan localmente y se pueden exportar como PNG o PDF."],
+  ["⚙️","Personaliza StudySonic","Elige el idioma de la interfaz, cambia los colores y repite este recorrido cuando quieras.","Ya está todo listo. ¡Que tengas una buena sesión de estudio!"]
+ ],skip:"Omitir tutorial",back:"Atrás",next:"Siguiente →",finish:"Empezar a estudiar",tip:"Puedes repetir este tutorial en cualquier momento desde Ajustes."}
+};
+let tutorialIndex=0;
+function renderTutorial(){const pack=TUTORIAL_TEXT[language]||TUTORIAL_TEXT.en,step=pack.steps[tutorialIndex];if(!step)return;$("tutorialKicker").textContent=pack.kicker;$("tutorialStepCount").textContent=`${tutorialIndex+1} / ${pack.steps.length}`;$("tutorialProgressBar").style.width=((tutorialIndex+1)/pack.steps.length*100)+"%";$("tutorialIcon").textContent=step[0];$("tutorialTitle").textContent=step[1];$("tutorialDescription").textContent=step[2];$("tutorialTip").textContent=step[3];$("tutorialSkip").textContent=pack.skip;$("tutorialBack").textContent=pack.back;$("tutorialBack").hidden=tutorialIndex===0;$("tutorialNext").textContent=tutorialIndex===pack.steps.length-1?pack.finish:pack.next;}
+function openTutorial(){tutorialIndex=0;renderTutorial();$("firstRunTutorial").hidden=false;$("tutorialNext").focus();}
+function closeTutorial(){ $("firstRunTutorial").hidden=true;try{localStorage.setItem("ss-v1-tutorial-complete","1")}catch{} }
+function bindTutorial(){const overlay=$("firstRunTutorial");if(!overlay)return;$("tutorialNext").addEventListener("click",()=>{const count=(TUTORIAL_TEXT[language]||TUTORIAL_TEXT.en).steps.length;if(tutorialIndex>=count-1){closeTutorial();return}tutorialIndex++;renderTutorial()});$("tutorialBack").addEventListener("click",()=>{if(tutorialIndex>0){tutorialIndex--;renderTutorial()}});$("tutorialSkip").addEventListener("click",closeTutorial);$("replayTutorial")?.addEventListener("click",openTutorial);}
 
 // Device choice is intentionally asked on every V1 page load; it is not saved.
 const deviceModal=$("deviceChoiceModal");
@@ -246,6 +285,8 @@ if(deviceModal){
   document.body.classList.add("device-selected");
   deviceModal.hidden=true;
   window.scrollTo({top:0,behavior:"instant"});
+  let tutorialDone=false;try{tutorialDone=localStorage.getItem("ss-v1-tutorial-complete")==="1"}catch{}
+  if(!tutorialDone)openTutorial();
  };
  // Delegated click handling avoids lost handlers if the modal is re-rendered.
  deviceModal.addEventListener("click",event=>{
