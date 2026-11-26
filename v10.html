@@ -98,7 +98,7 @@
 
 <section class="v3-changelog" id="v6Changelog">
   <div class="eyebrow" id="changesEyebrow">VERSION NOTES</div>
-  <h2 id="changesTitle">What changed in V1.0</h2>
+  <h2 id="changesTitle">What changed in V1</h2>
   <ul>
     <li id="change1">Choose Robot voice or My own voice before creating a set.</li>
     <li id="change2">Each voice choice opens a dedicated creation workspace.</li>
@@ -133,23 +133,5 @@
     </div>
   </section>
 </div>
-<div class="toast" id="toast"></div>
-<script>
-(function(){
-  const modal=document.getElementById('deviceChoiceModal');
-  if(!modal) return;
-  modal.addEventListener('click',function(event){
-    const button=event.target.closest('[data-device-choice]');
-    if(!button || !modal.contains(button)) return;
-    const choice=button.getAttribute('data-device-choice');
-    if(!['iphone','ipad','laptop'].includes(choice)) return;
-    document.body.setAttribute('data-device',choice);
-    document.body.classList.add('device-selected');
-    modal.hidden=true;
-    modal.setAttribute('aria-hidden','true');
-    window.scrollTo({top:0,behavior:'instant'});
-  });
-})();
-</script>
-<script src="v10.js"></script>
+<div class="toast" id="toast"></div><script src="v10.js"></script>
 </body></html>
