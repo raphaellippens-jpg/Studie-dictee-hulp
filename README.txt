@@ -21,3 +21,7 @@ Install by extracting and merging into the repository root. Keep any other exist
 V1.2 adds the latest-version launcher, V1.2 release entry, tutorial mode chooser, animated hands-off tour, text tutorial, written self-assessment practice, and updated placeholders.
 
 V1.3 adds a selectable tutorial preference in Settings, a mascot-guided hands-on tutorial, a matching hands-off neon-highlight demo, and a complete text guide. The V2 archive now lists V1.3 and V1.2 in their chronological slots; the latest banner launches V1.3.
+
+V1.4 adds the StudySonic racing-car mascot (mascot.png) and matching robotic pointer (pointer.png), uses them in the guided tutorial panel, and updates the latest-version launch and app version labels.
+
+V1.4: full 28-step tutorial in Hands-on and Hands-off modes, complete long-form guide in EN/NL/FR/ES, settings replay, version hub tutorial entry, mascot.png and pointer.png. Analytics period and graph selectors added.

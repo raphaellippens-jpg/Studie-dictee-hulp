@@ -101,7 +101,7 @@
     "versions-v1.html",
     "versions-v2.html"
   ],
-  "latest_release": "V1.3",
+  "latest_release": "V1.4",
   "v13": {
     "files": [
       "v13.html",
@@ -109,5 +109,15 @@
       "v13.js"
     ],
     "description": "Tutorial redesign and archive corrections"
+  },
+  "v14": {
+    "files": [
+      "v14.html",
+      "v14.css",
+      "v14.js",
+      "mascot.png",
+      "pointer.png"
+    ],
+    "tutorial_steps": 28
   }
 }
