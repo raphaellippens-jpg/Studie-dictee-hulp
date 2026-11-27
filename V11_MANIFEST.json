@@ -100,5 +100,14 @@
     "v9.js",
     "versions-v1.html",
     "versions-v2.html"
-  ]
+  ],
+  "latest_release": "V1.3",
+  "v13": {
+    "files": [
+      "v13.html",
+      "v13.css",
+      "v13.js"
+    ],
+    "description": "Tutorial redesign and archive corrections"
+  }
 }

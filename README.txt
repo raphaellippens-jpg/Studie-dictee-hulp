@@ -19,3 +19,5 @@ Learning analytics and smart-review history are stored locally in this browser/d
 Install by extracting and merging into the repository root. Keep any other existing files and folders. Do not delete old releases.
 
 V1.2 adds the latest-version launcher, V1.2 release entry, tutorial mode chooser, animated hands-off tour, text tutorial, written self-assessment practice, and updated placeholders.
+
+V1.3 adds a selectable tutorial preference in Settings, a mascot-guided hands-on tutorial, a matching hands-off neon-highlight demo, and a complete text guide. The V2 archive now lists V1.3 and V1.2 in their chronological slots; the latest banner launches V1.3.
