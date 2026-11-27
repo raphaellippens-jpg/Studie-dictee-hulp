@@ -17,3 +17,5 @@ V1.1 additions:
 Learning analytics and smart-review history are stored locally in this browser/device. Study-set export currently exports the set, not the analytics/review history.
 
 Install by extracting and merging into the repository root. Keep any other existing files and folders. Do not delete old releases.
+
+V1.2 adds the latest-version launcher, V1.2 release entry, tutorial mode chooser, animated hands-off tour, text tutorial, written self-assessment practice, and updated placeholders.
