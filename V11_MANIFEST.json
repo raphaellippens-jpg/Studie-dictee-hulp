@@ -99,9 +99,12 @@
     "v9.html",
     "v9.js",
     "versions-v1.html",
-    "versions-v2.html"
+    "versions-v2.html",
+    "v15.html",
+    "v15.css",
+    "v15.js"
   ],
-  "latest_release": "V1.4",
+  "latest_release": "V1.5",
   "v13": {
     "files": [
       "v13.html",
@@ -119,5 +122,14 @@
       "pointer.png"
     ],
     "tutorial_steps": 28
+  },
+  "v15": {
+    "files": [
+      "v15.html",
+      "v15.css",
+      "v15.js"
+    ],
+    "based_on": "V1.4 fixed build",
+    "description": "V1.5 release fork; V1.4 preserved as a separate historical version."
   }
 }
